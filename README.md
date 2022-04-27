@@ -1,6 +1,8 @@
 Eclipse Mosquitto
 =================
 
+Mosquitto fork created to enable usage of the OpenSSL partial_chain verification option.  This option allows Mosquitto to use an intermedate CA as a trust anchor for TLS. 
+
 Mosquitto is an open source implementation of a server for version 5.0, 3.1.1,
 and 3.1 of the MQTT protocol. It also includes a C and C++ client library, and
 the `mosquitto_pub` and `mosquitto_sub` utilities for publishing and
