@@ -468,6 +468,7 @@ int net__load_certificates(struct mosquitto__listener *listener)
 	int rc;
 
 	if(listener->require_certificate){
+		X509_VERIFY_PARAM_set_flags(listener->ssl_ctx->param, X509_V_FLAG_PARTIAL_CHAIN);
 		SSL_CTX_set_verify(listener->ssl_ctx, SSL_VERIFY_PEER | SSL_VERIFY_FAIL_IF_NO_PEER_CERT, client_certificate_verify);
 	}else{
 		SSL_CTX_set_verify(listener->ssl_ctx, SSL_VERIFY_NONE, client_certificate_verify);
